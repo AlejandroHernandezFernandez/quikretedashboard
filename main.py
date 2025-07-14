@@ -84,7 +84,7 @@ CHANNEL_COLOR_RANGES = {
     ],
     "field3": [ # Kiln
         {"range": (None, 280), "color": "#FF3333"},
-        {"range": (300, 335), "color": "#F6FF33"},
+        {"range": (280, 335), "color": "#F6FF33"},
         {"range": (335, None), "color": "#33FF57"}
     ],
     "field4": [ # FM#1
