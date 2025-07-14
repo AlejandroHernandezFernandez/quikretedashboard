@@ -236,7 +236,7 @@ if st.session_state.last_good_channel_values:
        #Rounding for values and format for type of value
         if display_value != "N/A" and display_value is not None:
             try:
-                display_value = f"{float(display_value):.1f}" + " Tons"
+                display_value = f"{float(display_value):.1f}" + " TPH"
             except ValueError:
                 display_value = "Error"
         elif display_value != "N/A" and display_value is not None:
