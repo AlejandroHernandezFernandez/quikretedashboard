@@ -78,9 +78,9 @@ CHANNEL_COLOR_RANGES = {
         {"range": (1000, None), "color": "#33FF57"}  # GREEN: > 1000
     ],
     "field2": [ # Raw Mill
-        {"range": (None, 378), "color": "#FF3333"},
-        {"range": (378, 409), "color": "#F6FF33"},
-        {"range": (409, None), "color": "#33FF57"}
+        {"range": (None, 300), "color": "#FF3333"},
+        {"range": (300, 350), "color": "#F6FF33"},
+        {"range": (350, None), "color": "#33FF57"}
     ],
     "field3": [ # Kiln
         {"range": (None, 280), "color": "#FF3333"},
