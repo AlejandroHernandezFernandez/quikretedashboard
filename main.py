@@ -187,7 +187,7 @@ with col_title:
 
 with col_logo:
     # Use the full file path as you provided
-    QUIKRETE_LOGO_PATH = '/Users/alejandro/Downloads/Quikrete Cement.png' 
+    QUIKRETE_LOGO_PATH = 'Quikrete Cement.png'
     st.image(QUIKRETE_LOGO_PATH, width=300) # Increased width for better visibility
 
 st_autorefresh(interval=15 * 1000, key="data_refresher") 
