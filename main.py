@@ -172,12 +172,12 @@ def get_latest_feed_from_thingspeak():
 st.set_page_config(layout="wide")
 
 if 'theme' not in st.session_state:
-    st.session_state.theme = 'light' 
+    st.session_state.theme = 'dark' 
 
-if st.session_state.theme == 'dark':
-    st.markdown(DARK_MODE_CSS, unsafe_allow_html=True)
-else:
+if st.session_state.theme == 'light':
     st.markdown(LIGHT_MODE_CSS, unsafe_allow_html=True)
+else:
+    st.markdown(DARK_MODE_CSS, unsafe_allow_html=True)
 
 # Create a two-column layout for the top bar
 col_title, col_logo = st.columns([5, 1])
