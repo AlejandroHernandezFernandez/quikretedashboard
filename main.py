@@ -234,31 +234,31 @@ if st.session_state.last_good_channel_values:
         square_color = get_color_for_value(field_key, st.session_state.last_good_channel_values.get(field_key))
         
        #Rounding for values and format for type of value
-        if display_value != "N/A" and display_value is not None:
+        if field_key == "field7" and display_value != "N/A" and display_value is not None:
             try:
-                display_value = f"{float(display_value):.1f}" + " TPH"
+                display_value = f"{float(display_value):.1f}" + "%"
             except ValueError:
                 display_value = "Error"
         elif display_value != "N/A" and display_value is not None:
-             display_value = str(display_value) + " Tons"
+             display_value = f"{float(display_value):.1f}" + "TPH"
         
         
-        col_name, col_value_middle, col_square = st.columns([3, 2, 0.8]) 
+        col_name, col_value_middle, col_square = st.columns([3, 2, 0.6]) 
         
         with col_name:
-            st.markdown(f"## **{channel_names[i]}**") 
+            st.markdown(f"# **{channel_names[i]}**") 
 
         with col_value_middle:
-                st.markdown(f"<h2 style='text-align: center;'>{display_value}</h2>", unsafe_allow_html=True)
+                st.markdown(f"<h1 style='text-align: center;'>{display_value}</h1>", unsafe_allow_html=True)
 
         with col_square:
             square_html = f"""
             <div style="
-                width: 40px;    
-                height: 40px;   
+                width: 80px;    
+                height: 80px;   
                 background-color: {square_color};
                 border-radius: 5px;
-                margin-top: 10px;"> 
+                margin-top: 5px;"> 
             </div>
             """
             st.markdown(square_html, unsafe_allow_html=True)
