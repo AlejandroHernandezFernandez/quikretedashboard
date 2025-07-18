@@ -219,8 +219,18 @@ if new_api_data:
             st.session_state.last_good_channel_values[field_key] = new_api_data[field_key]
 
 if st.session_state.last_good_channel_values:
-    st.markdown(f"### **Last Updated:** {pd.to_datetime(st.session_state.last_good_channel_values.get('created_at', 'N/A')).strftime('%Y-%m-%d %H:%M:%S')}")
-    
+    # Get the timestamp string from session state
+    timestamp_str = st.session_state.last_good_channel_values.get('created_at')
+
+    # Checks if a timestamp was found
+    if timestamp_str:
+        utc_time = pd.to_datetime(timestamp_str)
+        eastern_time = utc_time.tz_convert('America/New_York')
+        display_time = eastern_time.strftime('%Y-%m-%d %H:%M:%S')
+        st.markdown(f"### **Last Updated (ET):** {display_time}")
+    else:
+        st.markdown("### **Last Updated (ET):** N/A")
+
     channel_names = [
         "Crushing", "Raw Mill", "Kiln", "Finish Mill 1",
         "Finish Mill 2", "Coal Mill", "Blend Silo Level"
