@@ -129,7 +129,7 @@ def get_color_for_value(channel_key, value):
             
     return "#ADD8E6"  # Light blue as a default if no range matches
 
-@st.cache_data(ttl=15) # Cache data for 15 seconds
+@st.cache_data(ttl=900) # Cache data for 120 seconds
 def get_latest_feed_from_thingspeak():
     try:
         response = requests.get(API_URL)
