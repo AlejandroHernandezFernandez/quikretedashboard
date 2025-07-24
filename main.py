@@ -190,7 +190,7 @@ with col_logo:
     QUIKRETE_LOGO_PATH = 'Quikrete Cement.png'
     st.image(QUIKRETE_LOGO_PATH, width=300) # Increased width for better visibility
 
-st_autorefresh(interval=15 * 1000, key="data_refresher") 
+st_autorefresh(interval=5 * 1000, key="data_refresher") 
 
 # Toggle Theme Button (simple version)
 if st.button("Toggle Light/Dark Mode"):
