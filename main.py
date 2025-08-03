@@ -232,7 +232,7 @@ if st.session_state.last_good_channel_values:
         st.markdown("### **Last Updated (ET):** N/A")
 
     channel_names = [
-        "Crushing", "Raw Mill", "Kiln", "Finish Mill 1",
+        "Crusher", "Raw Mill", "Kiln", "Finish Mill 1",
         "Finish Mill 2", "Coal Mill", "Blend Silo Level"
     ]
     
