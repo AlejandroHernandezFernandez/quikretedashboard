@@ -243,14 +243,19 @@ if st.session_state.last_good_channel_values:
 
         square_color = get_color_for_value(field_key, st.session_state.last_good_channel_values.get(field_key))
         
-       #Rounding for values and format for type of value
-        if field_key == "field7" and display_value != "N/A" and display_value is not None:
+       # --- Safe rounding & formatting ---
+        if display_value not in [None, "N/A", "---", ""]:
             try:
-                display_value = f"{float(display_value):.1f}" + "%"
-            except ValueError:
-                display_value = "Error"
-        elif display_value != "N/A" and display_value is not None:
-             display_value = f"{float(display_value):.1f}" + "TPH"
+                numeric_value = float(display_value)
+                if field_key == "field7":
+                    display_value = f"{numeric_value:.1f}%"
+                else:
+                    display_value = f"{numeric_value:.1f} TPH"
+
+            except (ValueError, TypeError):
+                display_value = "N/A"
+        else:
+            display_value = "N/A"
         
         
         col_name, col_value_middle, col_square = st.columns([3, 2, 0.6]) 
